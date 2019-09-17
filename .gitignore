@@ -85,5 +85,6 @@ typings/
 .fusebox/
 
 # DynamoDB Local files
+.tmp
 .dynamodb/
 /config.json
