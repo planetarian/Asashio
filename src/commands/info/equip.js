@@ -32,7 +32,7 @@ const stats = {
 
 }
 exports.displayEquip = (equip, data) => {
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setTitle([`No. ${equip.id}`, equip.name, equip.japanese_name].filter(a => a).join(" | "))
         .setURL(`https://kancolle.fandom.com/wiki/${equip.name.replace(/ /g, "_")}`)
         .setThumbnail(data.getEquipLink(equip.id))

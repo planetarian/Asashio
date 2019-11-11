@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 const Logger = require("log4js").getLogger("Utils")
 
 exports.displayShip = (ship) => {
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setTitle([`No. ${ship.id} (api id: ${ship.api_id})`,ship.full_name, ship.japanese_name, /*ship.reading,*/ ship.rarity_name].filter(a => a).join(" | "))
 
     if(typeof ship.api_id == "number")

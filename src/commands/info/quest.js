@@ -32,7 +32,7 @@ exports.run = (message, args) => {
     if(quest == undefined) return message.reply("Unknown quest")
 
     // console.log(quest)
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setTitle([quest.label || questId, this.cleanText(quest.title_en), this.cleanText(quest.title)].filter(a => a).join(" | "))
         .setURL(`https://kancolle.fandom.com/wiki/Quests#${questId}`)
         .setDescription(this.parseText(quest.detail_en))

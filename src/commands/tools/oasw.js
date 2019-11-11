@@ -13,7 +13,7 @@ exports.run = (message, args) => {
 
     if(ship == undefined) return message.reply("Unknown ship")
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setTitle(`${ship.full_name} ${aswOffset > 0 ? `+${aswOffset} ASW` : ""}`)
         .setURL(`https://kancolle.fandom.com/wiki/${ship.name.replace(/ /g, "_")}`)
         .setThumbnail(`https://raw.githubusercontent.com/KC3Kai/KC3Kai/develop/src/assets/img/ships/${ship.api_id}.png`)

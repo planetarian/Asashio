@@ -1,5 +1,5 @@
 const { createCanvas } = require("canvas")
-const { Attachment } = require("discord.js")
+const { MessageAttachment } = require("discord.js")
 const cachedMaps = {}
 
 exports.run = async (message, args) => {
@@ -57,7 +57,7 @@ exports.genMap = async (map) => {
         ctx.lineWidth = 1
         ctx.fillText(node || "/", x, y - 10)
     }
-    const attachment = new Attachment(canvas.toBuffer(), `${map}.png`)
+    const attachment = new MessageAttachment(canvas.toBuffer(), `${map}.png`)
     cachedMaps[map] = attachment
     return attachment
 }

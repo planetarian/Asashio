@@ -23,8 +23,8 @@ exports.run = async (message, args) => {
     }
     const getUptime = () => formatTime(process.uptime())
     const getAdmins = async () => {
-        const users = global.config.admins.map(id => client.fetchUser(id))
-        return (await Promise.all(users)).map(user => user.tag).join(", ")
+        const users = global.config.admins.map(id => client.users.fetch(id))
+        return (await Promise.all(users)).map(user => (user||{tag: "?"}).tag).join(", ")
     }
 
     return message.channel.send(`Running on commit ${args && args.length > 0 ? `<${getVersion()}>` : getVersion()}

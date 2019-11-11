@@ -12,7 +12,7 @@ exports.run = (message, args) => {
     if(exped == undefined) return message.reply("Unknown expedition.")
     const [fuel, ammo, steel, bauxite] = (extraExpedData && extraExpedData.rsc) || (exped.api_win_mat_level.map(this.winmatlevel))
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setURL("https://kancolle.fandom.com/wiki/Expedition#/Expedition_Tables")
         .setTitle(`${exped.api_disp_no} ${exped.api_reset_type == 1 ? "[M] " : ""}${exped.api_damage_type == 1 ? "[D] " : ""}- ${exped.api_name} - ${this.getTime(exped.api_time)}`)
 

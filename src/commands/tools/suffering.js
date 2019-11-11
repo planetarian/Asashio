@@ -1,5 +1,5 @@
 const { createCanvas } = require("canvas")
-const { Attachment } = require("discord.js")
+const { MessageAttachment } = require("discord.js")
 const Utils = require("../../utils/Utils.js")
 
 exports.run = async (message, args) => {
@@ -66,7 +66,7 @@ function createBar(calculated) {
     ctx.fillRect(prev, 0, calculated.ok * bar.width, 10)
     prev += calculated.ok * bar.width
 
-    return new Attachment(bar.toBuffer(), "Bar.png")
+    return new MessageAttachment(bar.toBuffer(), "Bar.png")
 }
 function createGraph(hp, maxhp, armor) {
     const graphmax = Math.min(Math.ceil(1.3 * armor + hp) + 2, 450)
@@ -116,7 +116,7 @@ function createGraph(hp, maxhp, armor) {
         context.fillRect(0, percentage * height, width, 1)
         context.fillText(percentage * 100 + "%", width + 3, (1-percentage) * height)
     }
-    return new Attachment(canvas.toBuffer(), `Suffering chart ${hp} of ${maxhp} with ${armor} armor.png`)
+    return new MessageAttachment(canvas.toBuffer(), `Suffering chart ${hp} of ${maxhp} with ${armor} armor.png`)
 }
 
 exports.category = "Tools"

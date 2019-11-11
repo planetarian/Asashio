@@ -11,7 +11,7 @@ exports.run = (message, args) => {
 
     if(bgm == undefined) return message.reply("Invalid map.")
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setURL("https://kancolle.fandom.com/wiki/Music")
         .setTitle(`${map} BGM`)
 

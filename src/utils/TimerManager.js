@@ -8,13 +8,19 @@ exports.init = () => {
 
     const updateActivity = () => {
         const now = new Date()
-        global.client.user.setActivity(global.config.activity.replace("%t", now.toLocaleString("en-UK", {
+        const statusMessage = global.config.activity.replace("%t", now.toLocaleString("en-UK", {
             timeZone: "Asia/Tokyo",
             hour12: false,
             hourCycle: "h24",
             hour: "2-digit",
             minute: "2-digit"
-        })))
+        }))
+
+        global.client.user.edit({
+            "custom_status": {
+                "text": statusMessage
+            }
+        })
 
         const nextMinute = new Date()
         nextMinute.setUTCSeconds(0, 0)

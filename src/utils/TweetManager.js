@@ -38,7 +38,7 @@ exports.handleTweet = (tweet) => {
     if(tweet.retweeted_status)
         tweet = tweet.retweeted_status
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setAuthor(tweet.user.name, tweet.user.profile_image_url_https, `https://twitter.com/${tweet.user.screen_name}`)
         .setColor(`#${tweet.user.profile_background_color}`)
 
